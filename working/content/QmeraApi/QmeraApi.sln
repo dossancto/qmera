@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{199C3F2B-B54C-4945-93EA-105FD996B7FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QmeraApi", "src\QmeraApi\QmeraApi.csproj", "{4EDD8325-5B0B-4492-9948-9668D284472A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{5CE2FC5B-EE5C-464E-91F1-2982BD59CDDA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QmeraApi.Tests.Integration", "tests\QmeraApi.Tests.Integration\QmeraApi.Tests.Integration.csproj", "{9FBF424B-104E-47F3-9EA9-9795A06AAD7A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QmeraApi.Tests.Shared", "tests\QmeraApi.Tests.Shared\QmeraApi.Tests.Shared.csproj", "{82E21EAC-B982-4567-8FDE-D940BDA92CFE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4EDD8325-5B0B-4492-9948-9668D284472A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EDD8325-5B0B-4492-9948-9668D284472A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EDD8325-5B0B-4492-9948-9668D284472A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EDD8325-5B0B-4492-9948-9668D284472A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FBF424B-104E-47F3-9EA9-9795A06AAD7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FBF424B-104E-47F3-9EA9-9795A06AAD7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FBF424B-104E-47F3-9EA9-9795A06AAD7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FBF424B-104E-47F3-9EA9-9795A06AAD7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82E21EAC-B982-4567-8FDE-D940BDA92CFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82E21EAC-B982-4567-8FDE-D940BDA92CFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82E21EAC-B982-4567-8FDE-D940BDA92CFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82E21EAC-B982-4567-8FDE-D940BDA92CFE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4EDD8325-5B0B-4492-9948-9668D284472A} = {199C3F2B-B54C-4945-93EA-105FD996B7FE}
+		{9FBF424B-104E-47F3-9EA9-9795A06AAD7A} = {5CE2FC5B-EE5C-464E-91F1-2982BD59CDDA}
+		{82E21EAC-B982-4567-8FDE-D940BDA92CFE} = {5CE2FC5B-EE5C-464E-91F1-2982BD59CDDA}
+	EndGlobalSection
+EndGlobal
