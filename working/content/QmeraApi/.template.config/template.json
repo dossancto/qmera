@@ -5,10 +5,10 @@
     "Common",
     "Api"
   ],
-  "identity": "PhoenixApi",
+  "identity": "qmera.template",
   "name": "Phoenix Api Project",
-  "shortName": "phoenix.api",
-  "sourceName": "PhoenixApi",
+  "shortName": "qmera",
+  "sourceName": "QmeraApi",
   "tags": {
     "language": "C#",
     "type": "project"
