@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+    <metadata>
+        <id>qmera.template</id>
+        <version>1.0.0</version>
+        <authors>Lucas dos Santos Silva</authors>
+        <description>
+            Qmera is a Dotnet Scaffold Tools inspired by Elixir Phoenix Framework.
+        </description>
+        <packageTypes>
+            <packageType name="Template" />
+        </packageTypes>
+    </metadata>
+</package>
