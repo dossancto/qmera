@@ -16,7 +16,7 @@ jobs:
         dotnet-version: 9.0.x
         
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore tools/qmera-tool/QmeraTool/
       
     - name: Pack
       run: dotnet pack tools/qmera-tool/QmeraTool/ -c Release -o out
