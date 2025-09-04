@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <PackageType>Template</PackageType>
+    <PackageVersion>1.1</PackageVersion>
+    <PackageId>Qmera.Template</PackageId>
+    <Title>Qmera Templates</Title>
+    <Authors>dossancto</Authors>
+    <Description>Qmera is a Dotnet Scaffold Tools inspired by Elixir Phoenix Framework </Description>
+    <PackageTags>dotnet-new;templates;qmera</PackageTags>
+    <TargetFramework>net9.0</TargetFramework>
+
+    <IncludeContentInPack>true</IncludeContentInPack>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <ContentTargetFolders>content</ContentTargetFolders>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="content\**\*" Exclude="content\**\bin\**;content\**\obj\**" />
+    <Compile Remove="**\*" />
+  </ItemGroup>
+
+</Project>
