@@ -9,7 +9,10 @@ public static class CommandHelpers
     public static string? GetProjectPath(string? path = null, bool ignoreTestProjects = false)
     {
         var files = ProjectScanner.SearchForCsProjFiles(path)
-            ?.Where(x => !ignoreTestProjects || !x.Contains("test", StringComparison.CurrentCultureIgnoreCase))
+            ?.Where(x => !ignoreTestProjects ||
+                   !x.Contains("tests.integration", StringComparison.CurrentCultureIgnoreCase)
+                   && !x.Contains("tests.shared", StringComparison.CurrentCultureIgnoreCase)
+                    )
             .ToArray()
             ;
 
