@@ -12,19 +12,22 @@ public record GenerateModuleUsecaseOutput
 public static class GenerateModuleUsecase
 {
     public static GenerateModuleUsecaseOutput TryCreateRawModule(ScaffoldInput input, ProjectMetadata metadata, string pathToModule)
-        => TryCreateModule(input, metadata, pathToModule, GenerateModuleFactory.Generate);
+        => TryCreateModule(input, metadata, pathToModule, GenerateModuleFactory.Generate(input, metadata));
 
 
-    public static GenerateModuleUsecaseOutput TryCreateApiModule(ScaffoldInput input, ProjectMetadata metadata, string pathToModule)
-        => TryCreateModule(input, metadata, pathToModule, GenerateModuleFactory.Generate);
+    public static GenerateModuleUsecaseOutput TryCreateApiModule(
+        ScaffoldInput input,
+        ProjectMetadata metadata,
+        string pathToModule,
+        string apiMappingMethodName)
+        => TryCreateModule(input, metadata, pathToModule, GenerateModuleFactory.GenerateApiMapping(input, metadata, apiMappingMethodName));
 
     private static GenerateModuleUsecaseOutput TryCreateModule(
             ScaffoldInput input,
             ProjectMetadata metadata,
             string pathToModule,
-            Func<ScaffoldInput,
-            ProjectMetadata,
-            string> generateModule)
+            string moduleContent
+            )
     {
         var formatedModuleName = StringExtensions.ToPascalCase(input.Module);
 
@@ -38,8 +41,6 @@ public static class GenerateModuleUsecase
         }
 
         Directory.CreateDirectory(pathToModule);
-
-        var moduleContent = generateModule(input, metadata);
 
         File.WriteAllText(pathToModuleFile, moduleContent);
 

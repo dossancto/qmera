@@ -26,9 +26,43 @@ public static class GenerateModuleFactory
 
         sb.AppendLine();
 
-        sb.AppendLine($"    public static WebApplicationBuilder Use{formatedModuleName}Module(this WebApplicationBuilder app)");
+        sb.AppendLine($"    public static WebApplication Use{formatedModuleName}Module(this WebApplication app)");
 
         sb.AppendLine("    {");
+        sb.AppendLine("        return app;");
+        sb.AppendLine("    }");
+
+        sb.AppendLine("}");
+
+        var content = sb.ToString();
+
+        return content;
+    }
+
+    public static string GenerateApiMapping(ScaffoldInput input, ProjectMetadata metadata, string apiMappingMethodName)
+    {
+        var sb = new StringBuilder();
+
+        var formatedModuleName = StringExtensions.ToPascalCase(input.Module);
+
+        sb.AppendLine($"using {metadata.SolutionName}.Modules.{input.Module}.Api.Endpoints;");
+        sb.AppendLine($"namespace {metadata.SolutionName}.Modules.{formatedModuleName};");
+        sb.AppendLine();
+        sb.AppendLine($"public static class {formatedModuleName}Module");
+        sb.AppendLine("{");
+
+        sb.AppendLine($"    public static IServiceCollection Add{formatedModuleName}Module(this IServiceCollection services)");
+
+        sb.AppendLine("    {");
+        sb.AppendLine("        return services;");
+        sb.AppendLine("    }");
+
+        sb.AppendLine();
+
+        sb.AppendLine($"    public static WebApplication Use{formatedModuleName}Module(this WebApplication app)");
+
+        sb.AppendLine("    {");
+        sb.AppendLine($"        app.{apiMappingMethodName}();");
         sb.AppendLine("        return app;");
         sb.AppendLine("    }");
 
