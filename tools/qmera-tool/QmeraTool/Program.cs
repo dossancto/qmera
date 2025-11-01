@@ -114,6 +114,6 @@ app.AddCommand(
 
         CreateApiResourceUsecase.Create(scaffoldInput, projectMetadata);
     })
-    .WithDescription("Gen Application Scheme only");
+    .WithDescription("Gen Application Api");
 
 app.Run();
