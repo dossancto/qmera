@@ -24,7 +24,9 @@ if (app.Environment.IsDevelopment())
     app.MapScalarApiReference();
 }
 
-app.UseTodosModule();
+app
+.UseCommumModule()
+.UseTodosModule();
 
 app.UseHttpsRedirection();
 

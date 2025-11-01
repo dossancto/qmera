@@ -14,4 +14,11 @@ public static class CommumModule
 
         return services;
     }
+
+    public static WebApplication UseCommumModule(this WebApplication app)
+    {
+        app.UseApiConfiguration();
+
+        return app;
+    }
 }

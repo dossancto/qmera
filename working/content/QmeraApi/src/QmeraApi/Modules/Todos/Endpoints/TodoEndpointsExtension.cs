@@ -4,13 +4,20 @@ using Microsoft.EntityFrameworkCore;
 using QmeraApi.Modules.Commum.Adapters.Databases;
 using QmeraApi.Modules.Todos.Models;
 
+using SharpGrip.FluentValidation.AutoValidation.Endpoints.Extensions;
+
 namespace QmeraApi.Modules.Todos.Endpoints;
 
 public static class TodoEndpointsExtension
 {
     public static void MapTodoEndpoints(this WebApplication app)
     {
-        app.MapGet("/todos", async (
+        var g = app
+            .MapGroup("/todos")
+            .AddFluentValidationAutoValidation()
+            ;
+
+        g.MapGet("/", async (
                     [FromServices] ApplicationDbContext db) =>
         {
             var todos = await db.Todos.ToListAsync();
@@ -18,7 +25,7 @@ public static class TodoEndpointsExtension
             return todos;
         });
 
-        app.MapGet("/todos/{id}", async (
+        g.MapGet("/{id}", async (
                     [FromServices] ApplicationDbContext db,
                     [FromRoute] int id) =>
         {
@@ -27,7 +34,7 @@ public static class TodoEndpointsExtension
             return todo;
         });
 
-        app.MapPost("/todos", async (
+        g.MapPost("/", async (
                     [FromServices] ApplicationDbContext db,
                     [FromBody] TodoModel todo) =>
         {
@@ -38,7 +45,7 @@ public static class TodoEndpointsExtension
             return todo;
         });
 
-        app.MapPut("/todos/{id}", async (
+        g.MapPut("/{id}", async (
                     [FromServices] ApplicationDbContext db,
                     [FromRoute] int id,
                     [FromBody] TodoModel todo
@@ -61,7 +68,7 @@ public static class TodoEndpointsExtension
             return Results.Ok(todoToUpdate);
         });
 
-        app.MapDelete("/todos/{id}", async (
+        g.MapDelete("/{id}", async (
                     [FromServices] ApplicationDbContext db,
                     [FromRoute] int id) =>
         {
