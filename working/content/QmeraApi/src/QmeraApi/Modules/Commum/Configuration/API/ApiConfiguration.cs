@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 
 using QmeraApi.Modules.Commum.Adapters.UI.Middlewares;
 using QmeraApi.Modules.Commum.Configuration.API.Configurations;
+using QmeraApi.Modules.Commum.Configuration.API.Configurations.ValidatorOnOpenAPI;
 
 using SharpGrip.FluentValidation.AutoValidation.Endpoints.Extensions;
 
@@ -18,6 +19,12 @@ public static class ApiConfiguration
 {
     public static IServiceCollection AddApiConfiguration(this IServiceCollection services)
     {
+        services.AddOpenApi(c =>
+        {
+            c.AddFluentValidationRules();
+            c.AddObsoluteAttributes();
+        });
+
         services.ConfigureHttpJsonOptions(options
                      => options.SerializerOptions.Converters.Add(new JsonStringEnumConverter()));
 
