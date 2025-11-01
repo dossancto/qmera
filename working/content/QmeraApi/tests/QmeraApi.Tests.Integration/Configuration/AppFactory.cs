@@ -1,13 +1,15 @@
 using System.Data.Common;
+
 using DotNetEnv;
-using QmeraApi.Modules.Commum.Adapters.Databases;
-using Microsoft.EntityFrameworkCore;
 
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
+using Microsoft.Data.Sqlite;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Data.Sqlite;
+
+using QmeraApi.Modules.Commum.Adapters.Databases;
 
 namespace QmeraApi.Tests.Integration.Configuration;
 
