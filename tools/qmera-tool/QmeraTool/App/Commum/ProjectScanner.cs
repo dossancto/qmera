@@ -4,17 +4,26 @@ public static class ProjectScanner
 {
     public static string[] SearchForCsProjFiles(string? path = null)
     {
+        path ??= Directory.GetCurrentDirectory();
+
+        var slnFile = Directory.GetFiles(path, "*.sln", SearchOption.TopDirectoryOnly)
+            .FirstOrDefault()
+            ?.Replace(".sln", "")
+            ;
+
+        var slnFileName = Path.GetFileName(slnFile);
+
+        var webAssemblycsprojName = $"{slnFileName}.Client.csproj";
+
         var files = Directory.GetFiles(
-            path: path ?? Directory.GetCurrentDirectory(),
+            path: path,
             searchPattern: "*.csproj",
-            searchOption: SearchOption.AllDirectories);
+            searchOption: SearchOption.AllDirectories)
+            .Where(file => !file.Contains(webAssemblycsprojName))
+            .ToArray()
+            ;
 
-        if (files is null)
-        {
-            return [];
-        }
-
-        if(files.Length is 0)
+        if (files is null or { Length: 0 })
         {
             return [];
         }

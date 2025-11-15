@@ -13,6 +13,9 @@ app.AddCommand("gen.scheme", GenerateCommands.GenerateScheme)
 .WithDescription("Gen Application Scheme only");
 
 app.AddCommand("gen.api", GenerateCommands.GenerateApi)
-    .WithDescription("Gen Application Api");
+.WithDescription("Gen Application Api");
+
+app.AddCommand("gen.web", GenerateCommands.GenerateWeb)
+.WithDescription("Gen Application web pages using Blazor");
 
 app.Run();
