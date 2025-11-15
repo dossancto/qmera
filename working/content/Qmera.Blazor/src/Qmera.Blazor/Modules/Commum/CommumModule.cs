@@ -1,3 +1,4 @@
+using Qmera.Blazor.Modules.Commum.Adapters.Databases;
 using Qmera.Blazor.Modules.Commum.Adapters.Monitoring;
 
 namespace Qmera.Blazor.Modules.Commum;
@@ -7,6 +8,7 @@ public static class CommumModule
     public static IServiceCollection AddCommumModule(this IServiceCollection services)
     {
         services.AddMonitoring();
+        services.AddDatabasesConfiguration();
 
         return services;
     }
