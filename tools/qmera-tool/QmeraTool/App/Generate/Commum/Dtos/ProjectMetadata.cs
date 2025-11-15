@@ -9,8 +9,8 @@ public record ProjectMetadata
 {
     public static ProjectMetadata FromCsProjPath(string path)
     {
-        var name = Path.GetFileNameWithoutExtension(path);
-        var solutionName = Path.GetFileNameWithoutExtension(path);
+        var name = Path.GetFileName(path);
+        var solutionName = Path.GetFileName(path);
 
         return new ProjectMetadata(
             Name: name,
