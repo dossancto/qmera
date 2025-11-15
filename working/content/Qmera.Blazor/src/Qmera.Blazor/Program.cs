@@ -1,3 +1,4 @@
+using Qmera.Blazor.Modules.Commum;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -8,6 +9,8 @@ using Qmera.Blazor.Data;
 using Microsoft.FluentUI.AspNetCore.Components;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddCommumModule();
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
