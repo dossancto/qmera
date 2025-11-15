@@ -2,3 +2,4 @@ out
 
 .env
 working/content/QmeraApi/src/QmeraApi/QMera.db
+working/content/Qmera.Blazor/src/Qmera.Blazor/Data/app.db
