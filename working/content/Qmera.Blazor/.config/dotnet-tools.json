@@ -15,6 +15,13 @@
         "anv"
       ],
       "rollForward": false
+    },
+    "qmeratool": {
+      "version": "1.2.1",
+      "commands": [
+        "qmera"
+      ],
+      "rollForward": false
     }
   }
 }
