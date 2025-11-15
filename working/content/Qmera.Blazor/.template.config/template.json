@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "dossancto",
+  "classifications": [
+    "Common",
+    "Blazor",
+    "Web"
+  ],
+  "identity": "qmera.template",
+  "name": "Qmera Blazor Project",
+  "shortName": "qmera-blazor",
+  "sourceName": "Qmera.Blazor",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  }
+}
